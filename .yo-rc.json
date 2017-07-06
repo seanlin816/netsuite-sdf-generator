@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Sean Lin",
+      "authorEmail": "sean.lin@concentrus.com",
+      "authorUrl": ""
+    }
+  }
+}
