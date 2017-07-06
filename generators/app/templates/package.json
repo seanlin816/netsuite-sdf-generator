@@ -1,0 +1,34 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.1",
+  "description": "<%= description %>",
+  "main": "index.js",
+  "scripts": {
+    "doc": "jsdoc -c ./doc/conf.json",
+    "test": "mocha --opts .mocharc",
+    "posttest": "eslint --fix --config .eslintrc --ignore-path .eslintignore .",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": "gitlab:stoicsoftware/netsuite-scaffold.git",
+  "keywords": [
+    "netsuite",
+    "suitescript"
+  ],
+  "author": "<%= author %>",
+  "license": "MIT",
+  "private": true,
+  "preferGlobal": false,
+  "directories": {
+    "lib": "lib",
+    "doc": "doc",
+    "example": "examples"
+  },
+  "devDependencies": {
+    "eslint": "^4.1.1",
+    "eslint-plugin-suitescript": "^0.1.1",
+    "jsdoc": "^3.4.1",
+    "jsdoc-plugin-suitescript": "^1.0.0",
+    "mocha": "^3.0.2",
+    "should": "^11.1.0"
+  }
+}
