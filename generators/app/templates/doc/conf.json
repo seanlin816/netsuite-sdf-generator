@@ -1,0 +1,27 @@
+{
+  "plugins": [
+    "plugins/markdown",
+	"plugins/suitescript"
+  ],
+  "tags": {
+    "allowUnknownTags": false,
+    "dictionaries": ["jsdoc"]
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": false
+  },
+  "source": {
+    "include": ["FileCabinet/SuiteScripts"],
+    "includePattern": ".+\\.js(doc)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "opts": {
+    "debug": false,
+    "destination": "doc",
+    "encoding": "utf8",
+    "readme": "README.md",
+    "recurse": true,
+    "template": "templates/netsuite"
+  }
+}

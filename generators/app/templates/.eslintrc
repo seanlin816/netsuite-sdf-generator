@@ -1,0 +1,29 @@
+{
+  "plugins": [
+    "suitescript"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jquery": true,
+    "mocha": true,
+    "amd": true,
+    "suitescript/suitescript1": true,
+    "suitescript/suitescript2": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": [
+      "error",
+      4
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}

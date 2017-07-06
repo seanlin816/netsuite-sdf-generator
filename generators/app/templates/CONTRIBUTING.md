@@ -1,0 +1,1 @@
+Let potential contributors know how to help with CONTRIBUTING.md. Here's a [great example](https://github.com/puppetlabs/puppet/blob/master/CONTRIBUTING.md).
