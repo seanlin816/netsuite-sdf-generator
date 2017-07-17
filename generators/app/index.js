@@ -30,6 +30,62 @@ module.exports = class extends Generator {
       this.templatePath(),
       this.destinationPath()
     );
+    this.fs.copy(
+      this.templatePath('.editorconfig'),
+      this.destinationPath('.editorconfig'), {
+        name: this.props.name,
+        description: this.props.description,
+        author: this.props.author
+      }
+    );
+    this.fs.copy(
+      this.templatePath('.eslintignore'),
+      this.destinationPath('.eslintignore'), {
+        name: this.props.name,
+        description: this.props.description,
+        author: this.props.author
+      }
+    );
+    this.fs.copy(
+      this.templatePath('.eslintrc'),
+      this.destinationPath('.eslintrc'), {
+        name: this.props.name,
+        description: this.props.description,
+        author: this.props.author
+      }
+    );
+    this.fs.copy(
+      this.templatePath('.gitattributes'),
+      this.destinationPath('.gitattributes'), {
+        name: this.props.name,
+        description: this.props.description,
+        author: this.props.author
+      }
+    );
+    this.fs.copy(
+      this.templatePath('.gitignore'),
+      this.destinationPath('.gitignore'), {
+        name: this.props.name,
+        description: this.props.description,
+        author: this.props.author
+      }
+    );
+    this.fs.copy(
+      this.templatePath('.mocharc'),
+      this.destinationPath('.mocharc'), {
+        name: this.props.name,
+        description: this.props.description,
+        author: this.props.author
+      }
+    );
+    this.fs.copy(
+      this.templatePath('Objects/.keep'),
+      this.destinationPath('Objects/.keep'), {
+        name: this.props.name,
+        description: this.props.description,
+        author: this.props.author
+      }
+    );
     this.fs.copyTpl(
       this.templatePath('package.json'),
       this.destinationPath('package.json'), {
@@ -46,5 +102,6 @@ module.exports = class extends Generator {
       bower: false,
       yarn: true
     });
+    this.spawnCommand('git', ['init']);
   }
 };
