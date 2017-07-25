@@ -24,6 +24,17 @@
     "semi": [
       "error",
       "always"
+    ],
+    "no-unused-vars": [
+      "off",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "no-useless-escape": [
+      "off"
     ]
   }
 }
