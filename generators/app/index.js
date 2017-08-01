@@ -72,13 +72,15 @@ module.exports = class extends Generator {
   }
 
   install() {
-    this.spawnCommandSync('git', ['init']);
-    this.spawnCommandSync('git', ['add',"."]);
-    this.spawnCommandSync('git', ['commit','-m','"first time commit"']);
     this.installDependencies({
       npm: false,
       bower: false,
-      yarn: true
+      yarn: true,
+      callback: function () {
+        this.spawnCommandSync('git', ['init']);
+        this.spawnCommandSync('git', ['add',"."]);
+        this.spawnCommandSync('git', ['commit','-m','"first time commit"']);
+      }.bind(this)
     });
   }
 };
