@@ -1,5 +1,5 @@
 <manifest projecttype="ACCOUNTCUSTOMIZATION">
-  <projectname>Your Project Name</projectname>
+  <projectname><%= name %></projectname>
   <frameworkversion>1.0</frameworkversion>
   <dependencies>
     <features>

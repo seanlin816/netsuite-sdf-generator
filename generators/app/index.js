@@ -32,51 +32,27 @@ module.exports = class extends Generator {
     );
     this.fs.copy(
       this.templatePath('.editorconfig'),
-      this.destinationPath('.editorconfig'), {
-        name: this.props.name,
-        description: this.props.description,
-        author: this.props.author
-      }
+      this.destinationPath('.editorconfig')
     );
     this.fs.copy(
       this.templatePath('.eslintignore'),
-      this.destinationPath('.eslintignore'), {
-        name: this.props.name,
-        description: this.props.description,
-        author: this.props.author
-      }
+      this.destinationPath('.eslintignore')
     );
     this.fs.copy(
       this.templatePath('.eslintrc'),
-      this.destinationPath('.eslintrc'), {
-        name: this.props.name,
-        description: this.props.description,
-        author: this.props.author
-      }
+      this.destinationPath('.eslintrc')
     );
     this.fs.copy(
       this.templatePath('.gitignore'),
-      this.destinationPath('.gitignore'), {
-        name: this.props.name,
-        description: this.props.description,
-        author: this.props.author
-      }
+      this.destinationPath('.gitignore')
     );
     this.fs.copy(
       this.templatePath('.mocharc'),
-      this.destinationPath('.mocharc'), {
-        name: this.props.name,
-        description: this.props.description,
-        author: this.props.author
-      }
+      this.destinationPath('.mocharc')
     );
     this.fs.copy(
       this.templatePath('Objects/.keep'),
-      this.destinationPath('Objects/.keep'), {
-        name: this.props.name,
-        description: this.props.description,
-        author: this.props.author
-      }
+      this.destinationPath('Objects/.keep')
     );
     this.fs.copyTpl(
       this.templatePath('package.json'),
@@ -86,14 +62,27 @@ module.exports = class extends Generator {
         author: this.props.author
       }
     );
+    this.fs.copyTpl(
+      this.templatePath('manifest.xml'),
+      this.destinationPath('manifest.xml'), {
+        name: this.props.name
+
+      }
+    );
   }
 
   install() {
-    this.installDependencies({
-      npm: false,
-      bower: false,
-      yarn: true
-    });
-    this.spawnCommand('git', ['init']);
+    this.spawnCommandSync('git', ['init']);
+    this.spawnCommandSync('git', ['add',"."]);
+    this.spawnCommandSync('git', ['commit','-m','"first time commit"']);
+    // this.installDependencies({
+    //
+    //   npm: false,
+    //   bower: false,
+    //   yarn: true
+    // });
+    //this.spawnCommand('git', ['init']);
+    //this.spawnCommand('git', ['add',"."]);
+    //this.spawnCommand('git', ['commit','-m','"first time commit"']);
   }
 };
