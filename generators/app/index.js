@@ -55,14 +55,6 @@ module.exports = class extends Generator {
       }
     );
     this.fs.copy(
-      this.templatePath('.gitattributes'),
-      this.destinationPath('.gitattributes'), {
-        name: this.props.name,
-        description: this.props.description,
-        author: this.props.author
-      }
-    );
-    this.fs.copy(
       this.templatePath('.gitignore'),
       this.destinationPath('.gitignore'), {
         name: this.props.name,
